@@ -1,0 +1,2172 @@
+
+
+----QUIT----(13 August 2023 19:14:09) CuisUniversity-5981.image priorSource: 5713367!
+
+----STARTUP---- (13 August 2023 19:14:10) as /Users/hernan/Documents/Cuis/5.0-64Bits/Cuis-University-Installer/CuisUniversity-5981.image!
+
+
+----QUIT----(13 August 2023 19:14:10) CuisUniversity-5981.image priorSource: 10197065!
+
+----STARTUP---- (28 September 2023 18:08:01) as /home/clinux01/Descargas/linux64/linux64/CuisUniversity-5981.image!
+
+
+Object subclass: #RomanTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Roman'!
+
+!classDefinition: #RomanTest category: 'Roman' stamp: 'SC 9/28/2023 18:08:36'!
+Object subclass: #RomanTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Roman'!
+!RomanTest methodsFor: 'no messages' stamp: 'SC 9/28/2023 18:11:48'!
+test01
+	self assert: 1 asRoman equals: 'I'! !
+
+1!
+!SmallInteger methodsFor: 'mathematical functions' stamp: 'SC 9/28/2023 18:19:09'!
+asRoman
+	^'I'! !
+!RomanTest methodsFor: 'as yet unclassified' stamp: 'SC 9/28/2023 18:19:35' prior: 50650333!
+test01
+	^self assert: 1 asRoman equals: 'I'! !
+!RomanTest methodsFor: 'as yet unclassified' stamp: 'SC 9/28/2023 18:19:39' prior: 50650342!
+test01
+	self assert: 1 asRoman equals: 'I'! !
+!RomanTest methodsFor: 'as yet unclassified' stamp: 'SC 9/28/2023 18:19:50' prior: 50650347!
+test01
+
+	self assert: 1 asRoman equals: 'I'! !
+!RomanTest methodsFor: 'as yet unclassified' stamp: 'SC 9/28/2023 18:20:04' prior: 50650352!
+test01
+
+	self assert: 1 asRoman equals: 'I'.! !
+!RomanTest methodsFor: 'as yet unclassified' stamp: 'SC 9/28/2023 18:20:19' prior: 50650357!
+test01
+
+	self assert: 1 asRoman equals: 'I'! !
+!RomanTest methodsFor: 'test' stamp: 'SC 9/28/2023 18:22:35'!
+test02
+
+	self assert: 2 asRoman equals: 'II'! !
+!SmallInteger methodsFor: 'mathematical functions' stamp: 'SC 9/28/2023 18:23:10' prior: 50650338!
+asRoman
+	self = 1 ifTrue:['I']
+	^'II'! !
+!RomanTest methodsFor: 'test' stamp: 'SC 9/28/2023 18:26:30'!
+test03
+
+	self assert: 3 asRoman equals: 'III'! !
+!RomanTest methodsFor: 'test' stamp: 'SC 9/28/2023 18:26:36'!
+test04
+
+	self assert: 4 asRoman equals: 'IV'! !
+!SmallInteger methodsFor: 'mathematical functions' stamp: 'SC 9/28/2023 18:26:59' prior: 50650371!
+asRoman
+	self = 1 ifTrue:['I'].
+	self = 2 ifTrue:['II'].
+	self = 3 ifTrue:['III'].
+	^'IV'.! !
+!RomanTest methodsFor: 'test' stamp: 'SC 9/28/2023 18:27:20'!
+test05
+
+	self assert: 5 asRoman equals: 'V'! !
+!SmallInteger methodsFor: 'mathematical functions' stamp: 'SC 9/28/2023 18:27:34' prior: 50650384!
+asRoman
+	self = 1 ifTrue:['I'].
+	self = 2 ifTrue:['II'].
+	self = 3 ifTrue:['III'].
+	self = 4 ifTrue:['IV'].
+	^'V'.! !
+!SmallInteger methodsFor: 'mathematical functions' stamp: 'SC 9/28/2023 18:31:55' prior: 50650394!
+asRoman
+	(self between: 1 and: 3)
+		ifTrue: [^String new: self withAll: $I].
+			
+	self = 1 ifTrue:['I'].
+	self = 2 ifTrue:['II'].
+	self = 3 ifTrue:['III'].
+	self = 4 ifTrue:['IV'].
+	^'V'.! !
+!RomanTest methodsFor: 'test' stamp: 'SC 9/28/2023 18:34:50'!
+test06
+
+	self assert: 6 asRoman equals: 'VI'! !
+!SmallInteger methodsFor: 'mathematical functions' stamp: 'SC 9/28/2023 18:35:21' prior: 50650401!
+asRoman
+	(self between: 1 and: 3)
+		ifTrue: [^String new: self withAll: $I].
+			
+	self = 1 ifTrue:['I'].
+	self = 2 ifTrue:['II'].
+	self = 3 ifTrue:['III'].
+	self = 5 ifTrue:['V'].
+	self = 6 ifTrue:['VI'].! !
+!SmallInteger methodsFor: 'mathematical functions' stamp: 'SC 9/28/2023 18:35:35' prior: 50650414!
+asRoman
+	(self between: 1 and: 3)
+		ifTrue: [^String new: self withAll: $I].
+			
+	self = 4 ifTrue:['IV'].
+	self = 5 ifTrue:['V'].
+	self = 6 ifTrue:['VI'].! !
+!SmallInteger methodsFor: 'mathematical functions' stamp: 'SC 9/28/2023 18:39:21' prior: 50650424!
+asRoman
+	(self between: 1 and: 3)
+		ifTrue: [^String new: self withAll: $I].
+			
+	self = 4 ifTrue:['IV'].
+	self = 5 ifTrue:['V'].
+	self = 6 ifTrue:['VI'].
+	self = 7 ifTrue:['VII'].
+	self = 8 ifTrue:['VIII'].
+	self = 9 ifTrue:['IX'].! !
+!RomanTest methodsFor: 'test' stamp: 'SC 9/28/2023 18:39:31'!
+test07
+
+	self assert: 7 asRoman equals: 'VII'! !
+!RomanTest methodsFor: 'test' stamp: 'SC 9/28/2023 18:39:38'!
+test08
+
+	self assert: 8 asRoman equals: 'VIII'! !
+!RomanTest methodsFor: 'test' stamp: 'SC 9/28/2023 18:39:47'!
+test09
+
+	self assert: 9 asRoman equals: 'IX'! !
+
+----End fileIn of /home/clinux01/Descargas/linux64/linux64/TDDBabyStepsGame.st----!
+
+TDDBabyStepsGameRot13 start!
+
+!classDefinition: #TDDBabyStepsRot13Test category: 'TDDBabyStepsGameRot13' stamp: 'SC 9/28/2023 21:02:06'!
+TestCase subclass: #TDDBabyStepsRot13Test
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TDDBabyStepsGameRot13'!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:02:32'!
+test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet
+	
+	self assert: $n equals: $a asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:04:35'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:04:35'!
+ERROR!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:04:50'!
+asRot13
+	self shouldBeImplemented.! !
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:05:18' prior: 50652283!
+asRot13
+	^$n! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:05:25'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:05:27'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:05:27'!
+test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet
+	
+	self assert: $z equals: $m asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:05:27'!
+FAILURE!
+
+!methodRemoval: TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:05:27'!
+test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet
+	
+	self assert: $z equals: $m asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:05:27'!
+test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet
+	
+	self assert: $z equals: $m asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:05:27'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:06:33'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:06:33'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:09:48' prior: 50652287!
+asRot13
+	(self = $a) ifTrue:[^$n].
+	^$z.
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:09:51'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:09:51'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:09:55'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:09:55'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:09:55'!
+test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $a equals: $n asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:09:55'!
+FAILURE!
+
+!methodRemoval: TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:09:55'!
+test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $a equals: $n asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:09:55'!
+test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $a equals: $n asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:09:55'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:17'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:17'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:10:42' prior: 50652337!
+asRot13
+	(self = $a) ifTrue:[^$n].
+	(self = $n) ifTrue:[^$a].
+	^$z.
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:44'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:46'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:46'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:46'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:10:46'!
+test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $m equals: $z asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:46'!
+FAILURE!
+
+!methodRemoval: TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:46'!
+test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $m equals: $z asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:10:46'!
+test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $m equals: $z asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:10:46'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:18:49' prior: 50652397!
+asRot13
+	(self digitValue + 13) .
+	(self = $n) ifTrue:[^$a].
+	^$z.
+	! !
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:20:06' prior: 50652449!
+asRot13
+	^(self digitValue + 13) asCharacter.
+
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:20:09'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:20:09'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:20:09'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:20:09'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:20:27' prior: 50652454!
+asRot13
+	^(self digitValue + 13) asCursorForm .
+
+	! !
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:20:59' prior: 50652476!
+asRot13
+	^(self digitValue + 13) asSymbol .
+
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:21:01'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:21:01'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:21:01'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:21:01'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:21:12'!
+ERROR!
+
+----End fileIn of /home/clinux01/Descargas/linux64/linux64/Packages/TerseGuide.pck.st----!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:23:29' prior: 50652481!
+asRot13
+	^(self asciiValue + 13) asCharacter .
+
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:23:31'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:23:31'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:23:31'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:23:31'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:24:51' prior: 50655427!
+asRot13
+	(self between: $a  and: $m) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	self = $n ifTrue: [^$a].! !
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:24:56' prior: 50655449!
+asRot13
+	(self between: $a  and: $m) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	! !
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:25:17' prior: 50655456!
+asRot13
+	(self between: $a  and: $m) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:25:19'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:25:19'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:25:19'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:25:19'!
+ERROR!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:26:33' prior: 50655462!
+asRot13
+	((self asciiValue) between: $a asciiValue and: $m asciiValue ) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:26:46'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:26:46'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:26:46'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:26:46'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:27:27' prior: 50655486!
+asRot13
+	(self between: $a and: $m ) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:28'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:28'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:28'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:28'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:35'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:35'!
+ERROR!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:27:54' prior: 50655511!
+asRot13
+	(self digitValue between: $a digitValue and: $m digitValue) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:56'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:56'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:56'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:27:56'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:28:13' prior: 50655544!
+asRot13
+	(self digitValue between: $a digitValue -1 and: $m digitValue +1) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:14'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:14'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:14'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:14'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:28:18' prior: 50655569!
+asRot13
+	(self digitValue between: $a digitValue and: $m digitValue) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:20'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:20'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:20'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:20'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:22'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:22'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:28:37' prior: 50655594!
+asRot13
+	(self digitValue between: $a digitValue and: $m digitValue) ifTrue:[(self asciiValue + 14) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:38'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:38'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:41'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:41'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:54'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:54'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:54'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:28:54'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:28:59' prior: 50655628!
+asRot13
+	(self digitValue between: $a digitValue and: $m digitValue) ifTrue:[(self asciiValue + 10) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:29:00'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:29:00'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:29:00'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:29:00'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:29:02'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:29:02'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:29:10' prior: 50655680!
+asRot13
+	(self digitValue between: $a digitValue and: $m digitValue) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:13'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:14'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:14'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:21'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:21'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:30:37' prior: 50655714!
+asRot13
+	(self digitValue between: $a digitValue -1 and: $m digitValue +1) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:38'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:38'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:30:38'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:30:45' prior: 50655748!
+asRot13
+	(self digitValue between: $a digitValue and: $m digitValue) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:31:03' prior: 50655773!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:31:04'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:31:04'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:31:04'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:31:04'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:31:30'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:31:30'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:31:45'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:31:45'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:32:24' prior: 50655781!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	self = $n ifTrue: [^$a].
+	^$m! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:25'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:25'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:25'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:25'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:30'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:30'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:30'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:30'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:32:30'!
+test05CharOnTheBelowRangeDoesntChange
+	
+	self assert: $` equals: $` asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:32:30'!
+FAILURE!
+
+!methodRemoval: TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:32:30'!
+test05CharOnTheBelowRangeDoesntChange
+	
+	self assert: $` equals: $` asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:32:30'!
+test05CharOnTheBelowRangeDoesntChange
+	
+	self assert: $` equals: $` asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:32:30'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:50'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:50'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:50'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:32:50'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:32:50'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:32:50'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:34:01'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:34:01'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:36:38' prior: 50655824!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^($z asciiValue - self asciiValue +$a asciiValue) asCharacter].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:36:40'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:36:40'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:36:40'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:36:40'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:36:40'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:38:53' prior: 50655923!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 13  +$a asciiValue) asCharacter].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:38:54'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:38:54'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:38:54'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:38:54'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:38:54'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:39:18' prior: 50655955!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 13 +$a asciiValue) asCharacter].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:19'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:19'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:19'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:19'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:39:19'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:20'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:20'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:39:33' prior: 50655987!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:39:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:39:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:39:38'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:39:38'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:39:38'!
+PASSED!
+
+!methodRemoval: TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:39:38'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:42:51' prior: 50656028!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[self = $n ifTrue:[^$a]. self = $z ifTrue:[^$n]]
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:42:52'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:42:52'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:42:52'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:42:52'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:42:52'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:43:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:43:38'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:43:38'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:43:38'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:43:38'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:43:40'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:43:40'!
+ERROR!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:44:00' prior: 50656097!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[self = $n ifTrue:[^$a]. self = $z ifTrue:[^$n]].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:00'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:00'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:00'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:00'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:44:00'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:00'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:44:08' prior: 50656159!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[self = $n ifTrue:[^$a]. self = $z ifTrue:[^$,]].
+	^self! !
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:44:10' prior: 50656195!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[self = $n ifTrue:[^$a]. self = $z ifTrue:[^$m]].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:44:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:57'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:57'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:57'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:44:57'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:44:57'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:44:57'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:44:57'!
+PASSED!
+
+!methodRemoval: TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:44:57'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:45:53' prior: 50656206!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[self = $n ifTrue:[^$a]. self = $z ifTrue:[^$m]].
+	^self! !
+
+!testRun: #CharacterTest #testCaseConversion stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterTest #testFromUtf8 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterTest #testIsCharacter stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterTest #testSomeLatinCharsFromUtf8 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterTest #testSomeLatinCharsToUtf8 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterTest #testSorting stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterTest #testTestingMethods stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterTest #testToUtf8 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterSetTest #testIncludesReturnsFalseForCharacterNotIncluded stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterSetTest #testIncludesReturnsFalseForObjectsThatAreNotCharacters stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #CharacterSetTest #testIncludesReturnsTrueForCharacterIncluded stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testAfterBlanksEndsWith stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testArticle stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testAsUtf8 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testBase64 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testBeginsWith stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testCaseConversion stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph1 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph2 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph3 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph4 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph5 stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testFindSelector stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testFirstNonSeparator stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testIsString stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testLastNonSeparator stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testLineSeparators stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testSorting stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testWithBlanksTrimmed stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testWithoutLeadingBlanks stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testWithoutPrefix stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testWithoutSeparators stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #StringTest #testWithoutTrailingBlanks stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotTestSelectorWhenHasParameters stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotTestSelectorWhenItDoesNotStartsWithTest stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotValidBinarySelectorIfItContainsACharacterNotAllowed stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotValidKeywordSelectorIfItContainsSeparators stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotValidUnarySelectorIfItContainsCharactersUsedInBinarySelectors stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotValidUnarySelectorIfItStartsWithALetterAndContainsSeparators stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsTestSelectorWhenStartsWithTestAndHasNoParameters stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsValidBinarySelectorIfItContainsAnAllowedCharacterOrSequenceOfCharacters stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsValidKeywordSelectorIfItContainsKeywordsWithColons stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #SymbolTest #testIsValidUnarySelectorIfItStartsWithALetterAndDoesNotContainSeparators stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #UnicodeCodePointTest #testCompareIsTransitive stamp: 'SC 9/28/2023 21:45:53'!
+PASSED!
+
+!testRun: #UnicodeCodePointTest #testCompareWithCharacters stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #TrieUnicodeTest #test01 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #TrieUnicodeTest #test02 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #TrieUnicodeTest #test03 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeNormalizationTest #testCanonicalComposites stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeNormalizationTest #testMultipleCombiningMarks stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeNormalizationTest #testSingletons stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test01 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test02 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test03 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test04 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test05Utf8 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test06isAscii stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test07 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test08a stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test08b stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test08c stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test08d stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test09 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test10 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test11 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test12 stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #testAtPut stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #testfromBytesStream stamp: 'SC 9/28/2023 21:45:54'!
+PASSED!
+
+!testRun: #CharacterTest #testCaseConversion stamp: 'SC 9/28/2023 21:45:58'!
+PASSED!
+
+!testRun: #CharacterTest #testFromUtf8 stamp: 'SC 9/28/2023 21:45:58'!
+PASSED!
+
+!testRun: #CharacterTest #testIsCharacter stamp: 'SC 9/28/2023 21:45:58'!
+PASSED!
+
+!testRun: #CharacterTest #testSomeLatinCharsFromUtf8 stamp: 'SC 9/28/2023 21:45:58'!
+PASSED!
+
+!testRun: #CharacterTest #testSomeLatinCharsToUtf8 stamp: 'SC 9/28/2023 21:45:58'!
+PASSED!
+
+!testRun: #CharacterTest #testSorting stamp: 'SC 9/28/2023 21:45:58'!
+PASSED!
+
+!testRun: #CharacterTest #testTestingMethods stamp: 'SC 9/28/2023 21:45:58'!
+PASSED!
+
+!testRun: #CharacterTest #testToUtf8 stamp: 'SC 9/28/2023 21:45:58'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:46:50' prior: 50656274!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[self = $a ifTrue:[^$n]. self = $m ifTrue:[^$z]].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[self = $n ifTrue:[^$a]. self = $z ifTrue:[^$m]].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:46:51'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:46:51'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:46:51'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:46:51'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:46:51'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:46:53'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:46:53'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:46:53'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:46:53'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:46:53'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:46:53'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:46:53'!
+PASSED!
+
+!methodRemoval: TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:46:53'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	!
+
+!testRun: #CharacterTest #testCaseConversion stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterTest #testFromUtf8 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterTest #testIsCharacter stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterTest #testSomeLatinCharsFromUtf8 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterTest #testSomeLatinCharsToUtf8 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterTest #testSorting stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterTest #testTestingMethods stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterTest #testToUtf8 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterSetTest #testIncludesReturnsFalseForCharacterNotIncluded stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterSetTest #testIncludesReturnsFalseForObjectsThatAreNotCharacters stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #CharacterSetTest #testIncludesReturnsTrueForCharacterIncluded stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testAfterBlanksEndsWith stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testArticle stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testAsUtf8 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testBase64 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testBeginsWith stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testCaseConversion stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph1 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph2 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph3 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph4 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testEncompassParagraph5 stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testFindSelector stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testFirstNonSeparator stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testIsString stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testLastNonSeparator stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testLineSeparators stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testSorting stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testWithBlanksTrimmed stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testWithoutLeadingBlanks stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testWithoutPrefix stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testWithoutSeparators stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #StringTest #testWithoutTrailingBlanks stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotTestSelectorWhenHasParameters stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotTestSelectorWhenItDoesNotStartsWithTest stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotValidBinarySelectorIfItContainsACharacterNotAllowed stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotValidKeywordSelectorIfItContainsSeparators stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotValidUnarySelectorIfItContainsCharactersUsedInBinarySelectors stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsNotValidUnarySelectorIfItStartsWithALetterAndContainsSeparators stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsTestSelectorWhenStartsWithTestAndHasNoParameters stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsValidBinarySelectorIfItContainsAnAllowedCharacterOrSequenceOfCharacters stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsValidKeywordSelectorIfItContainsKeywordsWithColons stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #SymbolTest #testIsValidUnarySelectorIfItStartsWithALetterAndDoesNotContainSeparators stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #UnicodeCodePointTest #testCompareIsTransitive stamp: 'SC 9/28/2023 21:47:06'!
+PASSED!
+
+!testRun: #UnicodeCodePointTest #testCompareWithCharacters stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #TrieUnicodeTest #test01 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #TrieUnicodeTest #test02 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #TrieUnicodeTest #test03 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeNormalizationTest #testCanonicalComposites stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeNormalizationTest #testMultipleCombiningMarks stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeNormalizationTest #testSingletons stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test01 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test02 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test03 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test04 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test05Utf8 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test06isAscii stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test07 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test08a stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test08b stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test08c stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test08d stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test09 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test10 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test11 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #test12 stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #testAtPut stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+
+!testRun: #UnicodeStringsTest #testfromBytesStream stamp: 'SC 9/28/2023 21:47:07'!
+PASSED!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:39:33' prior: 50656500!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	^self! !
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:47:57' prior: 50656762!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	^$,! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:47:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:47:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:47:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:47:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:47:59'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:47:59'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:48:10' prior: 50656773!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	^$'! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:48:11'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:48:11'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:48:26' prior: 50656809!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	^$`! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:28'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:28'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:28'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:28'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:48:28'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:30'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:30'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:30'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:48:30'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:48:30'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:48:30'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:48:30'!
+FAILURE!
+
+!methodRemoval: TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:48:30'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:48:30'!
+test06CharOnTheUpperRangeDoesntChange
+	
+	self assert: ${ equals: ${ asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:48:30'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:49:11' prior: 50656845!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	self = ${ ifTrue: [^${].
+	^$`! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:49:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:49:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:14'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:14'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:14'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:14'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:49:14'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:49:14'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:49:14'!
+test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet
+	
+	self assert: $N equals: $A asRot13.
+	self assert: $Z equals: $M asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:14'!
+FAILURE!
+
+!methodRemoval: TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:14'!
+test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet
+	
+	self assert: $N equals: $A asRot13.
+	self assert: $Z equals: $M asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:49:14'!
+test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet
+	
+	self assert: $N equals: $A asRot13.
+	self assert: $Z equals: $M asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:49:14'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:50:12' prior: 50656922!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	self = $A ifTrue: [^$N].
+	self = $M ifTrue: [^$Z].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:50:13'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:50:13'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:50:13'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:50:13'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:50:13'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:50:13'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:50:13'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:50:13'!
+test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $A equals: $N asRot13.
+	self assert: $M equals: $Z asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:50:13'!
+FAILURE!
+
+!methodRemoval: TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:50:13'!
+test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $A equals: $N asRot13.
+	self assert: $M equals: $Z asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:50:13'!
+test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet
+	
+	self assert: $A equals: $N asRot13.
+	self assert: $M equals: $Z asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:50:13'!
+FAILURE!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:51:10' prior: 50657016!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	(self asciiValue between: $A asciiValue and: $M asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	self = $N ifTrue: [^$A].
+	self = $Z ifTrue: [^$M].
+	^self! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:51:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:51:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:11'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:51:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:51:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:51:12'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:51:12'!
+test09TheEmptyStringDoesntChange
+	
+	self assert: '' equals: '' asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:51:12'!
+ERROR!
+
+!methodRemoval: TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:51:12'!
+test09TheEmptyStringDoesntChange
+	
+	self assert: '' equals: '' asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:51:12'!
+test09TheEmptyStringDoesntChange
+	
+	self assert: '' equals: '' asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:51:12'!
+ERROR!
+!Character methodsFor: 'test' stamp: 'SC 9/28/2023 21:52:27' prior: 50657091!
+asRot13
+	(self asciiValue between: $a asciiValue and: $m asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $n asciiValue and: $z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	(self asciiValue between: $A asciiValue and: $M asciiValue ) ifTrue:[^(self asciiValue + 13) asCharacter].
+	(self asciiValue between: $N asciiValue and: $Z asciiValue ) ifTrue:[^(self asciiValue -$z asciiValue + 12 +$a asciiValue) asCharacter].
+	^self! !
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:52:42'!
+asRot13
+	^''! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:52:45'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:52:47'!
+PASSED!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:52:47'!
+test10CorrectlyEncodesAOneCharString
+	
+	self assert: 'n' equals: 'a' asRot13.
+	self assert: 'Z' equals: 'M' asRot13.
+	self assert: 'a' equals: 'n' asRot13.
+	self assert: '{' equals: '{' asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:52:47'!
+FAILURE!
+
+!methodRemoval: TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:52:47'!
+test10CorrectlyEncodesAOneCharString
+	
+	self assert: 'n' equals: 'a' asRot13.
+	self assert: 'Z' equals: 'M' asRot13.
+	self assert: 'a' equals: 'n' asRot13.
+	self assert: '{' equals: '{' asRot13
+	!
+!TDDBabyStepsRot13Test methodsFor: 'tests' stamp: 'SC 9/28/2023 21:52:47'!
+test10CorrectlyEncodesAOneCharString
+	
+	self assert: 'n' equals: 'a' asRot13.
+	self assert: 'Z' equals: 'M' asRot13.
+	self assert: 'a' equals: 'n' asRot13.
+	self assert: '{' equals: '{' asRot13
+	! !
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:52:47'!
+FAILURE!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:54:56' prior: 50657215!
+asRot13
+	self isEmpty ifTrue: [^self]
+	^self first asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:54:58'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:54:58'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:54:58'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:54:58'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:54:58'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:54:58'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:54:58'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:54:58'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:54:58'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:54:58'!
+ERROR!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:55:16' prior: 50657327!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^self first asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:55:17'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:55:17'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:55:17'!
+FAILURE!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:55:35' prior: 50657372!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^self asCharacterSet first asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:55:36'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:55:36'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:55:36'!
+ERROR!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:55:43' prior: 50657421!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^(self asCharacterSet) first asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:55:43'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:55:43'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:55:43'!
+ERROR!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:56:05' prior: 50657470!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^self first asCharacter asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:56:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:56:06'!
+FAILURE!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:56:06'!
+FAILURE!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:57:57' prior: 50657519!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^self asCharacterSet first asCharacter asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:57:59'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:57:59'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:57:59'!
+ERROR!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:58:05' prior: 50657568!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^self asCharacterSet asCharacter asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:58:06'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:58:06'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:58:06'!
+ERROR!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:58:11' prior: 50657618!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^(self asCharacterSet) asCharacter asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:58:12'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:58:12'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:58:12'!
+ERROR!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 21:58:21' prior: 50657668!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^(self asCharacterSet) first asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 21:58:22'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:58:22'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 21:58:22'!
+ERROR!
+!String methodsFor: 'copying' stamp: 'SC 9/28/2023 22:01:22' prior: 50657718!
+asRot13
+	self isEmpty ifTrue: [^self].
+	^(self collect:[]) first asRot13 ! !
+
+!testRun: #TDDBabyStepsRot13Test #test01CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test02CorrectlyEncodesALowercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test03CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test04CorrectlyEncodesALowercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test05CharOnTheBelowRangeDoesntChange stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test06CharOnTheUpperRangeDoesntChange stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test07CorrectlyEncodesAnUppercaseCharFromTheFirstPartOfTheAlphabet stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test08CorrectlyEncodesAnUppercaseCharFromTheSecondPartOfTheAlphabet stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test09TheEmptyStringDoesntChange stamp: 'SC 9/28/2023 22:01:24'!
+PASSED!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 22:01:24'!
+ERROR!
+
+!testRun: #TDDBabyStepsRot13Test #test10CorrectlyEncodesAOneCharString stamp: 'SC 9/28/2023 22:01:24'!
+ERROR!
+
+----SNAPSHOT----(28 September 2023 22:02:26) CuisUniversity-5981.image priorSource: 10197292!
