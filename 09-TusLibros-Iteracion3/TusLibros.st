@@ -253,27 +253,13 @@ TestCase subclass: #TusLibrosInterfaceTest
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
-setUp
-	storeTestObjectsFactory := StoreTestObjectsFactory new.
-	nextYear := Month month: DateAndTime now monthIndex year: DateAndTime now yearNumber + 1.
-	previousYear := Month month: DateAndTime now monthIndex year: DateAndTime now yearNumber - 1.
-	flexibleClock := FlexibleClock now.
-
-	interface := TusLibrosInterface with: ValidClientIDAndPasswordValidatorStud new andIDGenerator: CartIDGeneratorStud new andCatalogue: (storeTestObjectsFactory defaultCatalog) andMerchantProcessor: (MerchantProcessor new) andInternalClock: flexibleClock.
-	invalidClient := -1.
-	validClient := 1.
-	validClientPassword := 'pepe'.
-	
-	! !
-
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'SC 11/6/2023 21:29:45'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'SC 11/6/2023 21:29:45'!
 test01createedCartIsListed
 	| cartID |
 	cartID := interface createCartByUser:validClient withPassword: validClientPassword.
 	self shouldnt: [interface listCart: cartID] raise: Error.! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test02shouldCreateCartWithInvalidUserRaiseAnError
 	| cartID invalidInterface|
 	invalidInterface := TusLibrosInterface with: InvalidClientIDAndPasswordValidatorStud new andIDGenerator: CartIDGeneratorStud new andCatalogue: (storeTestObjectsFactory defaultCatalog) andMerchantProcessor: (MerchantProcessor new) andInternalClock: flexibleClock.
@@ -285,7 +271,7 @@ test02shouldCreateCartWithInvalidUserRaiseAnError
 		raise: Error withExceptionDo: [:anotherError | 
 			self assert: anotherError messageText = TusLibrosInterface invalidCartIDErrorMessage]]! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 00:56:00'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 00:56:00'!
 test03CanAddBookInCatalogueToExistingCart
 	| cartID |
 	cartID := interface createCartByUser:validClient withPassword: validClientPassword.
@@ -296,7 +282,7 @@ test03CanAddBookInCatalogueToExistingCart
 	
 ! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 01:02:25'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 01:02:25'!
 test04CannotAddBookNotInCatalogueToExistingCart
 	| cartID |
 	cartID := interface createCartByUser:validClient withPassword: validClientPassword.
@@ -305,26 +291,26 @@ test04CannotAddBookNotInCatalogueToExistingCart
 		self assert: (interface listCart: cartID) isEmpty].
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test05CannotAddBookToNonExistentCart
 	self should: [interface add: 1 ofBook: storeTestObjectsFactory itemNotSellByTheStore toCart: 1] raise:Error withExceptionDo: [:error |
 		self assert: error messageText equals: (TusLibrosInterface invalidCartIDErrorMessage).].
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test06CannotListNonExistentCart
 	self should: [interface listCart:1 ] raise:Error withExceptionDo: [:error |
 		self assert: error messageText equals: (TusLibrosInterface invalidCartIDErrorMessage).].
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 01:12:06'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 01:12:06'!
 test07ListOfNewCartIsEmpty
 	|cartId|
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
 	self assert: (interface listCart: cartId) isEmpty .
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 01:14:23'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 01:14:23'!
 test08ListWhenJustOneCartIsItemsOfThatCart
 	|cartId|
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -333,7 +319,7 @@ test08ListWhenJustOneCartIsItemsOfThatCart
 	self assert: ((interface listCart: cartId) occurrencesOf: (storeTestObjectsFactory itemSellByTheStore)) equals: 3.
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 01:17:26'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 01:17:26'!
 test09ListWhenMultipleCartsInInterface
 	|cartId anotherCartId |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -349,7 +335,7 @@ test09ListWhenMultipleCartsInInterface
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'SC 11/9/2023 02:00:39'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'SC 11/9/2023 02:00:39'!
 test10ExistingCartWithItemsCanCheckOut
 	|cartId |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -362,7 +348,7 @@ test10ExistingCartWithItemsCanCheckOut
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test11NonExistingCartCannotCheckOut
 
 	self should: [interface checkoutCart: 3 withCreditCardWithNumber: 1234 expiringOn: nextYear whoseOwnerIs: 'pepe'] raise:Error withExceptionDo: [:error |
@@ -371,7 +357,7 @@ test11NonExistingCartCannotCheckOut
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test12ExistingCartWithNoItemsCannotCheckOut
 	|cartId |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -382,7 +368,7 @@ test12ExistingCartWithNoItemsCannotCheckOut
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'SC 11/9/2023 02:04:27'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'SC 11/9/2023 02:04:27'!
 test13CannotCheckOutWithExpiredCreditCard
 	|cartId |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -394,7 +380,7 @@ test13CannotCheckOutWithExpiredCreditCard
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test14CannotListPurchasesOfInvalidUsernameAndPassword
 	| invalidInterface |
 	invalidInterface := TusLibrosInterface with: InvalidClientIDAndPasswordValidatorStud new andIDGenerator: CartIDGeneratorStud new andCatalogue: (storeTestObjectsFactory defaultCatalog) andMerchantProcessor: (MerchantProcessor new) andInternalClock: flexibleClock.
@@ -403,7 +389,7 @@ test14CannotListPurchasesOfInvalidUsernameAndPassword
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:21:55'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 14:21:55'!
 test15PurchasesOfClientWhoDidntBuyAnythingAreEmpty
 	| userPurchasesTicket |
 	userPurchasesTicket := (interface listPurchasesOf: 1 withPassword: 'pepe').
@@ -412,7 +398,7 @@ test15PurchasesOfClientWhoDidntBuyAnythingAreEmpty
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:23:31'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 14:23:31'!
 test16PurchasesOfClientWhoPurchasedOnce
 	| cartId userPurchasesTicket |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -424,7 +410,7 @@ test16PurchasesOfClientWhoPurchasedOnce
 	self assert: ((userPurchasesTicket boughtItems) occurrencesOf: storeTestObjectsFactory itemSellByTheStore) equals: 2.
 	self assert: userPurchasesTicket totalAmountSpent equals: storeTestObjectsFactory itemSellByTheStorePrice * 2.! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:24:29'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 14:24:29'!
 test17PurchasesOfClientWhoPurchasedMoreThanOnce
 	| cartId anotherCartId userPurchasesTicket |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -439,7 +425,7 @@ test17PurchasesOfClientWhoPurchasedMoreThanOnce
 	self assert: ((userPurchasesTicket boughtItems) occurrencesOf: storeTestObjectsFactory itemSellByTheStore) equals: 9.
 	self assert: userPurchasesTicket totalAmountSpent equals: 9 * storeTestObjectsFactory itemSellByTheStorePrice ! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test18CannotAddBooksToExpiredCart
 	| cartId |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -452,7 +438,7 @@ test18CannotAddBooksToExpiredCart
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:24:56'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 14:24:56'!
 test19CannotCheckoutExpiredCart
 	| cartId |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -466,7 +452,7 @@ test19CannotCheckoutExpiredCart
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test20CannotListExpiredCart
 	| cartId |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -479,7 +465,7 @@ test20CannotListExpiredCart
 
 	! !
 
-!TusLibrosInterfaceTest methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!TusLibrosInterfaceTest methodsFor: 'test' stamp: 'FC 11/9/2023 04:45:54'!
 test21ExpiryTimeIsRefreshedWhenUsed
 	| cartId |
 	cartId := interface createCartByUser: validClient withPassword: validClientPassword.
@@ -494,6 +480,21 @@ test21ExpiryTimeIsRefreshedWhenUsed
 
 
 ! !
+
+
+!TusLibrosInterfaceTest methodsFor: 'setUp' stamp: 'FC 11/9/2023 04:45:54'!
+setUp
+	storeTestObjectsFactory := StoreTestObjectsFactory new.
+	nextYear := Month month: DateAndTime now monthIndex year: DateAndTime now yearNumber + 1.
+	previousYear := Month month: DateAndTime now monthIndex year: DateAndTime now yearNumber - 1.
+	flexibleClock := FlexibleClock now.
+
+	interface := TusLibrosInterface with: ValidClientIDAndPasswordValidatorStud new andIDGenerator: CartIDGeneratorStud new andCatalogue: (storeTestObjectsFactory defaultCatalog) andMerchantProcessor: (MerchantProcessor new) andInternalClock: flexibleClock.
+	invalidClient := -1.
+	validClient := 1.
+	validClientPassword := 'pepe'.
+	
+	! !
 
 
 !classDefinition: #Cart category: 'TusLibros'!
@@ -595,14 +596,15 @@ Object subclass: #CartIDGeneratorStud
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!CartIDGeneratorStud methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 00:23:43'!
+!CartIDGeneratorStud methodsFor: 'initialization' stamp: 'FC 11/9/2023 00:23:56'!
+initialize
+	count := 1.! !
+
+
+!CartIDGeneratorStud methodsFor: 'creation' stamp: 'FC 11/9/2023 00:23:43'!
 generateIDForCart: cartToGenerateIDFor
 	count := count + 1.
 	^count! !
-
-!CartIDGeneratorStud methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 00:23:56'!
-initialize
-	count := 1.! !
 
 
 !classDefinition: #Cashier category: 'TusLibros'!
@@ -703,7 +705,7 @@ Object subclass: #ClientIDAndPasswordValidatorStud
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!ClientIDAndPasswordValidatorStud methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 00:01:49'!
+!ClientIDAndPasswordValidatorStud methodsFor: 'validation' stamp: 'FC 11/9/2023 00:01:49'!
 validate: username and: password
 
 	self subclassResponsibility! !
@@ -716,7 +718,7 @@ ClientIDAndPasswordValidatorStud subclass: #InvalidClientIDAndPasswordValidatorS
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!InvalidClientIDAndPasswordValidatorStud methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
+!InvalidClientIDAndPasswordValidatorStud methodsFor: 'validation' stamp: 'FC 11/9/2023 04:45:54'!
 validate: username and: password
 	self error: TusLibrosInterface invalidUserOrPasswordErrorMessage ! !
 
@@ -728,7 +730,7 @@ ClientIDAndPasswordValidatorStud subclass: #ValidClientIDAndPasswordValidatorStu
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!ValidClientIDAndPasswordValidatorStud methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 00:02:23'!
+!ValidClientIDAndPasswordValidatorStud methodsFor: 'validation' stamp: 'FC 11/9/2023 00:02:23'!
 validate: username and: password
 	! !
 
@@ -770,17 +772,19 @@ Object subclass: #FlexibleClock
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!FlexibleClock methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 03:51:16'!
-initializeIn: timeToInitializeTo
-	clockTime := timeToInitializeTo.! !
-
-!FlexibleClock methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 03:50:56'!
+!FlexibleClock methodsFor: 'accessing' stamp: 'FC 11/9/2023 03:50:56'!
 now
 	^clockTime! !
 
-!FlexibleClock methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 03:50:41'!
+
+!FlexibleClock methodsFor: 'converting' stamp: 'FC 11/9/2023 03:50:41'!
 timeLeapBy: amountOfTimeToLeap
 	clockTime := clockTime + amountOfTimeToLeap.! !
+
+
+!FlexibleClock methodsFor: 'initialization' stamp: 'FC 11/9/2023 03:51:16'!
+initializeIn: timeToInitializeTo
+	clockTime := timeToInitializeTo.! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
@@ -788,11 +792,11 @@ timeLeapBy: amountOfTimeToLeap
 FlexibleClock class
 	instanceVariableNames: ''!
 
-!FlexibleClock class methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 03:51:48'!
+!FlexibleClock class methodsFor: 'instance creation' stamp: 'FC 11/9/2023 03:51:48'!
 in: aTime
 	^self new initializeIn: aTime.! !
 
-!FlexibleClock class methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 03:52:17'!
+!FlexibleClock class methodsFor: 'instance creation' stamp: 'FC 11/9/2023 03:52:17'!
 now
 	^self in: DateAndTime now.! !
 
@@ -804,7 +808,7 @@ Object subclass: #MerchantProcessor
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!MerchantProcessor methodsFor: 'as yet unclassified' stamp: 'SC 11/9/2023 01:46:10'!
+!MerchantProcessor methodsFor: 'debit-stud' stamp: 'SC 11/9/2023 01:46:10'!
 debit: anAmountToDebit from: aCreditCard
 ! !
 
@@ -929,38 +933,90 @@ createCartByUser: aClientID withPassword: aPassword
 	^1!
 
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:14:05'!
+!TusLibrosInterface methodsFor: 'accessing' stamp: 'FC 11/9/2023 14:27:32'!
+boughtItemsForClientID: aClientID
+	^((salesOf at: aClientID) inject: (Bag new) into: [:purchases :sale | purchases addAll: (sale itemsBought); yourself])! !
+
+!TusLibrosInterface methodsFor: 'accessing' stamp: 'FC 11/9/2023 03:26:03'!
+now
+	^internalClock now.
+	
+
+	! !
+
+!TusLibrosInterface methodsFor: 'accessing' stamp: 'FC 11/9/2023 14:28:51'!
+totalAmountSpentForClientID: aClientID
+
+	^ (salesOf at: aClientID) sum: [:sale | sale total] ifEmpty: [0]! !
+
+
+!TusLibrosInterface methodsFor: 'inactivity managing' stamp: 'FC 11/9/2023 04:46:30'!
+maximumInactivityTimeForCart
+
+	^ 30 minutes! !
+
+!TusLibrosInterface methodsFor: 'inactivity managing' stamp: 'FC 11/9/2023 04:16:19'!
+refreshLastUseOfCart: cartID
+
+	^ lastUseOfCart at: cartID put: self now! !
+
+
+!TusLibrosInterface methodsFor: 'do asserting' stamp: 'FC 11/9/2023 04:37:58'!
+withCart: cartID do: aClosure
+	| result |
+	self assertCartIDExists: cartID.
+	self assertTimeSinceLastCartUseIsValid: cartID.
+	result := aClosure value.
+	self refreshLastUseOfCart: cartID.
+	^result
+! !
+
+!TusLibrosInterface methodsFor: 'do asserting' stamp: 'FC 11/9/2023 04:37:13'!
+withClientID: aClientID andPassword: password do: aClosure
+	self assertValidClientID: aClientID andPassword: password.
+	^aClosure value.
+! !
+
+
+!TusLibrosInterface methodsFor: 'cart register' stamp: 'FC 11/9/2023 04:32:28'!
+registerCart: cartForUser andOwnerID: aClientID andCreationTimeForCartID: idForCart
+
+	carts add: (idForCart -> cartForUser).
+	ownersOfCarts add: (idForCart -> aClientID ).
+	lastUseOfCart add: (idForCart -> self now).! !
+
+
+!TusLibrosInterface methodsFor: 'sales log creation' stamp: 'FC 11/9/2023 14:14:52'!
+createSalesLogIfFirstAccessOfClientID: aClientID
+
+	(salesOf includesKey: aClientID) ifFalse: [salesOf add: (aClientID -> OrderedCollection new).]! !
+
+
+!TusLibrosInterface methodsFor: 'initialization' stamp: 'SC 11/9/2023 15:25:20'!
+initialize
+	salesOf := Dictionary new.
+	ownersOfCarts := Dictionary new.
+	carts := Dictionary new.
+	lastUseOfCart := Dictionary new.! !
+
+!TusLibrosInterface methodsFor: 'initialization' stamp: 'FC 11/9/2023 04:43:32'!
+initializeWith: clientIDAndPasswordValidatorToInitializeWith andIDGenerator: idGeneratorToInitializeWith andCatalogue: catalogueToInitializeWith andMerchantProcessor: merchantProcessorToInitializeWith andInternalClock: internalClockToInitializeWith
+	clientIDAndPasswordValidator := clientIDAndPasswordValidatorToInitializeWith.
+	idGenerator := idGeneratorToInitializeWith.
+	catalogue := catalogueToInitializeWith.
+	merchantProcessor := merchantProcessorToInitializeWith.
+	internalClock := internalClockToInitializeWith.
+! !
+
+
+!TusLibrosInterface methodsFor: 'interface command' stamp: 'FC 11/9/2023 04:14:05'!
 add: quantity ofBook: bookISBN toCart: cartID
 	self assertCartIDExists: cartID.
 	self assertTimeSinceLastCartUseIsValid: cartID.
 	self refreshLastUseOfCart: cartID.
 	(carts at: cartID) add: quantity of: bookISBN.! !
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:45:54'!
-assertCartIDExists: aCartID
-
-	^ (carts includesKey: aCartID) ifFalse: [self error: TusLibrosInterface invalidCartIDErrorMessage ]! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:43:50'!
-assertCartIsNotEmpty: aCartID
-
-	^ (carts at: aCartID) isEmpty ifTrue:[self error: self class cannotCheckOutEmptyCartErrorDescrpition ]! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:46:30'!
-assertTimeSinceLastCartUseIsValid: cartID
-
-	^ ((lastUseOfCart at: cartID) + self maximumInactivityTimeForCart <= self now) ifTrue: [self error: self class cartInactivityErrorDescription ]! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:43:32'!
-assertValidClientID: aClientID andPassword: aPassword
-
-	^ clientIDAndPasswordValidator validate: aClientID and: aPassword! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:27:32'!
-boughtItemsForClientID: aClientID
-	^((salesOf at: aClientID) inject: (Bag new) into: [:purchases :sale | purchases addAll: (sale itemsBought); yourself])! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:06:04'!
+!TusLibrosInterface methodsFor: 'interface command' stamp: 'FC 11/9/2023 14:06:04'!
 checkoutCart: aCartID withCreditCardWithNumber: aCreditCardNumber expiringOn: anExpiringMonthOfYear whoseOwnerIs: anOwnerName
 	| creditCard cartOwner |
 	
@@ -973,7 +1029,7 @@ checkoutCart: aCartID withCreditCardWithNumber: aCreditCardNumber expiringOn: an
 	].
 	! !
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:14:52'!
+!TusLibrosInterface methodsFor: 'interface command' stamp: 'FC 11/9/2023 14:14:52'!
 createCartByUser: aClientID withPassword: aPassword
 	| cartForUser idForCart |
 	^self withClientID: aClientID andPassword: aPassword  do: [
@@ -987,34 +1043,13 @@ createCartByUser: aClientID withPassword: aPassword
 		^idForCart
 	]! !
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:14:52'!
-createSalesLogIfFirstAccessOfClientID: aClientID
-
-	(salesOf includesKey: aClientID) ifFalse: [salesOf add: (aClientID -> OrderedCollection new).]! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:05:11'!
-initialize
-	salesOf := Dictionary new.
-	ownersOfCarts := Dictionary new.
-	carts := Dictionary new.
-	lastUseOfCart := Dictionary new.! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:43:32'!
-initializeWith: clientIDAndPasswordValidatorToInitializeWith andIDGenerator: idGeneratorToInitializeWith andCatalogue: catalogueToInitializeWith andMerchantProcessor: merchantProcessorToInitializeWith andInternalClock: internalClockToInitializeWith
-	clientIDAndPasswordValidator := clientIDAndPasswordValidatorToInitializeWith.
-	idGenerator := idGeneratorToInitializeWith.
-	catalogue := catalogueToInitializeWith.
-	merchantProcessor := merchantProcessorToInitializeWith.
-	internalClock := internalClockToInitializeWith.
-! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:39:46'!
+!TusLibrosInterface methodsFor: 'interface command' stamp: 'FC 11/9/2023 04:39:46'!
 listCart: aCartID
 	^self withCart: aCartID do: [^(carts at: aCartID) items.]
 
 	! !
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:28:55'!
+!TusLibrosInterface methodsFor: 'interface command' stamp: 'FC 11/9/2023 14:28:55'!
 listPurchasesOf: aClientID withPassword: password
 	^self withClientID: aClientID andPassword: password do: 
 		[
@@ -1024,50 +1059,26 @@ listPurchasesOf: aClientID withPassword: password
 
 	! !
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:46:30'!
-maximumInactivityTimeForCart
 
-	^ 30 minutes! !
+!TusLibrosInterface methodsFor: 'assertion' stamp: 'FC 11/9/2023 04:45:54'!
+assertCartIDExists: aCartID
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 03:26:03'!
-now
-	^internalClock now.
-	
+	^ (carts includesKey: aCartID) ifFalse: [self error: TusLibrosInterface invalidCartIDErrorMessage ]! !
 
-	! !
+!TusLibrosInterface methodsFor: 'assertion' stamp: 'FC 11/9/2023 04:43:50'!
+assertCartIsNotEmpty: aCartID
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:16:19'!
-refreshLastUseOfCart: cartID
+	^ (carts at: aCartID) isEmpty ifTrue:[self error: self class cannotCheckOutEmptyCartErrorDescrpition ]! !
 
-	^ lastUseOfCart at: cartID put: self now! !
+!TusLibrosInterface methodsFor: 'assertion' stamp: 'FC 11/9/2023 04:46:30'!
+assertTimeSinceLastCartUseIsValid: cartID
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:32:28'!
-registerCart: cartForUser andOwnerID: aClientID andCreationTimeForCartID: idForCart
+	^ ((lastUseOfCart at: cartID) + self maximumInactivityTimeForCart <= self now) ifTrue: [self error: self class cartInactivityErrorDescription ]! !
 
-	carts add: (idForCart -> cartForUser).
-	ownersOfCarts add: (idForCart -> aClientID ).
-	lastUseOfCart add: (idForCart -> self now).! !
+!TusLibrosInterface methodsFor: 'assertion' stamp: 'FC 11/9/2023 04:43:32'!
+assertValidClientID: aClientID andPassword: aPassword
 
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:28:51'!
-totalAmountSpentForClientID: aClientID
-
-	^ (salesOf at: aClientID) sum: [:sale | sale total] ifEmpty: [0]! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:37:58'!
-withCart: cartID do: aClosure
-	| result |
-	self assertCartIDExists: cartID.
-	self assertTimeSinceLastCartUseIsValid: cartID.
-	result := aClosure value.
-	self refreshLastUseOfCart: cartID.
-	^result
-! !
-
-!TusLibrosInterface methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 04:37:13'!
-withClientID: aClientID andPassword: password do: aClosure
-	self assertValidClientID: aClientID andPassword: password.
-	^aClosure value.
-! !
+	^ clientIDAndPasswordValidator validate: aClientID and: aPassword! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
@@ -1075,31 +1086,32 @@ withClientID: aClientID andPassword: password do: aClosure
 TusLibrosInterface class
 	instanceVariableNames: ''!
 
-!TusLibrosInterface class methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 01:03:37'!
+!TusLibrosInterface class methodsFor: 'error handling' stamp: 'FC 11/9/2023 01:03:37'!
 cannotAddBookToNonExistentCartErrorDescription
 	^'Cannot add book to non-existent cart'! !
 
-!TusLibrosInterface class methodsFor: 'as yet unclassified' stamp: 'SC 11/9/2023 01:55:59'!
+!TusLibrosInterface class methodsFor: 'error handling' stamp: 'SC 11/9/2023 01:55:59'!
 cannotCheckOutEmptyCartErrorDescrpition
 	^'Cannot checkout an empty cart'! !
 
-!TusLibrosInterface class methodsFor: 'as yet unclassified' stamp: 'SC 11/9/2023 02:01:48'!
+!TusLibrosInterface class methodsFor: 'error handling' stamp: 'SC 11/9/2023 02:01:48'!
 cannotCheckOutWithExpiredCreditCardErrorDescription
 	^'Cannot check out with expired credit card'! !
 
-!TusLibrosInterface class methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 03:27:31'!
+!TusLibrosInterface class methodsFor: 'error handling' stamp: 'FC 11/9/2023 03:27:31'!
 cartInactivityErrorDescription
 	^'More than 30 minutes have transpired since the cart was last used, making it invalid.'! !
 
-!TusLibrosInterface class methodsFor: 'as yet unclassified' stamp: 'SC 11/6/2023 21:17:37'!
+!TusLibrosInterface class methodsFor: 'error handling' stamp: 'SC 11/6/2023 21:17:37'!
 invalidCartIDErrorMessage
 	^'CartID is not valid'! !
 
-!TusLibrosInterface class methodsFor: 'as yet unclassified' stamp: 'SC 11/6/2023 21:17:41'!
+!TusLibrosInterface class methodsFor: 'error handling' stamp: 'SC 11/6/2023 21:17:41'!
 invalidUserOrPasswordErrorMessage
 	^'User or password is not correct'! !
 
-!TusLibrosInterface class methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 03:25:28'!
+
+!TusLibrosInterface class methodsFor: 'instance creation' stamp: 'FC 11/9/2023 03:25:28'!
 with: usernameAndPasswordValidator andIDGenerator: idGenerator andCatalogue: aCatalogue andMerchantProcessor: aMerchantProcessor andInternalClock: internalClock
 	^self new initializeWith: usernameAndPasswordValidator andIDGenerator: idGenerator andCatalogue: aCatalogue andMerchantProcessor: aMerchantProcessor andInternalClock: internalClock.! !
 
@@ -1111,17 +1123,18 @@ Object subclass: #UserPurchasesTicket
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!UserPurchasesTicket methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:18:30'!
-boughtItems
-	^boughtItems! !
-
-!UserPurchasesTicket methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:18:06'!
+!UserPurchasesTicket methodsFor: 'initialization' stamp: 'FC 11/9/2023 14:18:06'!
 initializeWithBoughtItems: boughtItemsToIntializeWith andTotalAmountSpent: totalAmountSpentToInitializeWith
 	boughtItems := boughtItemsToIntializeWith.
 	totalAmountSpent := totalAmountSpentToInitializeWith.
 	! !
 
-!UserPurchasesTicket methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:18:37'!
+
+!UserPurchasesTicket methodsFor: 'accessing' stamp: 'FC 11/9/2023 14:18:30'!
+boughtItems
+	^boughtItems! !
+
+!UserPurchasesTicket methodsFor: 'accessing' stamp: 'FC 11/9/2023 14:18:37'!
 totalAmountSpent
 	^totalAmountSpent ! !
 
@@ -1131,6 +1144,6 @@ totalAmountSpent
 UserPurchasesTicket class
 	instanceVariableNames: ''!
 
-!UserPurchasesTicket class methodsFor: 'as yet unclassified' stamp: 'FC 11/9/2023 14:25:22'!
+!UserPurchasesTicket class methodsFor: 'instance creation' stamp: 'FC 11/9/2023 14:25:22'!
 ofBoughtItems: boughtItems for: totalAmountSpent
 	^self new initializeWithBoughtItems: boughtItems andTotalAmountSpent: totalAmountSpent! !
